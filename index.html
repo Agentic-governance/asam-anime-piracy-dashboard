@@ -2,90 +2,368 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="generated" content="2026-03-30T12:00:00Z">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="ASAM Anime Piracy Intelligence — 366 pirate sites, 108K titles, studio damage analysis">
+<meta name="description" content="ASAM Anime Piracy Intelligence Dashboard — Ecosystem analysis for copyright enforcement">
 <title>ASAM: Anime Piracy Intelligence Dashboard</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}:root{--bg-0:#020508;--bg-1:#060b12;--bg-2:#0c1420;--bg-3:#131d2e;--t1:#dce8f8;--t2:#7a9bbf;--t3:#3d5470;--p:#ff6b35;--s:#6b4fff;--a:#00e5cc;--d:#ff3344;--w:#ffaa00;--g:#00cc7a;--f:'Inter',system-ui,sans-serif;--m:'JetBrains Mono',monospace}html{font-size:14px}body{font-family:var(--f);color:var(--t1);background:var(--bg-0);min-height:100vh;line-height:1.5;background-image:linear-gradient(rgba(255,107,53,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,107,53,.02) 1px,transparent 1px);background-size:40px 40px}a{color:var(--p)}::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg-1)}::-webkit-scrollbar-thumb{background:var(--t3);border-radius:3px}
-.nav{position:fixed;top:0;left:0;right:0;height:56px;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 24px;background:rgba(6,11,18,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,107,53,.12)}.nb{display:flex;align-items:center;gap:10px}.nt{font-size:1.25rem;font-weight:800;letter-spacing:.08em;background:linear-gradient(135deg,var(--p),var(--a));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.nl{display:flex;gap:4px}.nl a{padding:6px 14px;border-radius:6px;font-size:.8rem;font-weight:500;color:var(--t2);transition:all .2s;text-decoration:none}.nl a:hover{color:var(--t1);background:rgba(255,107,53,.08)}.nl a.on{color:var(--t1);background:rgba(255,107,53,.15);font-weight:600}.tb{display:flex;align-items:center;gap:6px;padding:4px 12px;border-radius:20px;font-size:.7rem;font-weight:700;color:var(--d);background:rgba(255,51,68,.1);border:1px solid rgba(255,51,68,.25)}.pd{width:8px;height:8px;border-radius:50%;background:var(--d);animation:p 2s ease-in-out infinite}@keyframes p{0%,100%{opacity:1}50%{opacity:.4}}.df{font-size:.7rem;color:var(--t3);font-family:var(--m)}
-.mn{padding:72px 24px 40px;max-width:1600px;margin:0 auto}.hero{text-align:center;padding:40px 0 30px}.hero h1{font-size:2.2rem;font-weight:900;margin-bottom:8px;background:linear-gradient(135deg,var(--p),#ff9b6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.hero p{color:var(--t2);font-size:.95rem;max-width:700px;margin:0 auto}
-.kg{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:14px;margin:30px 0}.k{background:var(--bg-2);border:1px solid rgba(255,107,53,.1);border-radius:12px;padding:18px;text-align:center;transition:border-color .3s}.k:hover{border-color:rgba(255,107,53,.3)}.kv{font-size:1.8rem;font-weight:800;font-family:var(--m);color:var(--p);line-height:1.2}.kl{font-size:.72rem;color:var(--t2);margin-top:4px;letter-spacing:.04em;text-transform:uppercase}.k.d .kv{color:var(--d)}.k.w .kv{color:var(--w)}.k.a .kv{color:var(--a)}.k.s .kv{color:var(--s)}
-.sec{margin:40px 0}.st{font-size:1.1rem;font-weight:700;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,107,53,.15);display:flex;align-items:center;gap:8px}.st span{font-size:1.2rem}
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:900px){.g2{grid-template-columns:1fr}}.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}@media(max-width:1100px){.g3{grid-template-columns:1fr 1fr}}@media(max-width:700px){.g3{grid-template-columns:1fr}}
-.c{background:var(--bg-2);border:1px solid rgba(255,107,53,.08);border-radius:12px;padding:20px}.c h3{font-size:.85rem;color:var(--t2);margin-bottom:12px;font-weight:600}.c canvas{max-height:300px}
-.tw{overflow-x:auto;margin-top:12px}table{width:100%;border-collapse:collapse;font-size:.8rem}th{text-align:left;padding:10px 12px;background:var(--bg-3);color:var(--t2);font-weight:600;border-bottom:1px solid rgba(255,107,53,.1)}td{padding:8px 12px;border-bottom:1px solid var(--bg-3)}tr:hover td{background:rgba(255,107,53,.03)}.mo{font-family:var(--m);font-size:.78rem}.b{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.7rem;font-weight:600}.bd{background:rgba(255,51,68,.15);color:var(--d)}.bw{background:rgba(255,170,0,.15);color:var(--w)}.bg{background:rgba(0,204,122,.15);color:var(--g)}.ba{background:rgba(0,229,204,.15);color:var(--a)}
-.ft{text-align:center;padding:40px 0 20px;color:var(--t3);font-size:.75rem}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg-0:#020508;--bg-1:#060b12;--bg-2:#0c1420;--bg-3:#131d2e;
+  --text-1:#dce8f8;--text-2:#7a9bbf;--text-3:#3d5470;
+  --primary:#ff6b35;--secondary:#6b4fff;--accent:#00e5cc;
+  --danger:#ff3344;--warning:#ffaa00;--success:#00cc7a;
+  --font-sans:'Inter',system-ui,sans-serif;--font-mono:'JetBrains Mono',monospace;
+}
+html{font-size:14px;scroll-behavior:smooth}
+body{font-family:var(--font-sans);color:var(--text-1);background:var(--bg-0);min-height:100vh;line-height:1.5;
+  background-image:linear-gradient(rgba(255,107,53,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,107,53,.02) 1px,transparent 1px);background-size:40px 40px}
+a{color:var(--primary);text-decoration:none}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg-1)}::-webkit-scrollbar-thumb{background:var(--text-3);border-radius:3px}
+
+.navbar{position:fixed;top:0;left:0;right:0;height:56px;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 24px;background:rgba(6,11,18,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,107,53,.12)}
+.nav-brand{display:flex;align-items:center;gap:10px}
+.nav-brand-text{font-size:1.25rem;font-weight:800;letter-spacing:.08em;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.threat-badge{display:flex;align-items:center;gap:6px;padding:4px 12px;border-radius:20px;font-size:.7rem;font-weight:700;color:var(--danger);background:rgba(255,51,68,.1);border:1px solid rgba(255,51,68,.25)}
+.pulse-dot{width:8px;height:8px;border-radius:50%;background:var(--danger);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.data-fresh{font-size:.7rem;color:var(--text-3);font-family:var(--font-mono)}
+
+.main{padding:72px 24px 40px;max-width:1600px;margin:0 auto}
+
+.hero{text-align:center;padding:40px 0 30px}
+.hero h1{font-size:2.2rem;font-weight:900;margin-bottom:8px;background:linear-gradient(135deg,var(--primary),#ff9b6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:var(--text-2);font-size:.95rem;max-width:700px;margin:0 auto}
+
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin:30px 0}
+.kpi{background:var(--bg-2);border:1px solid rgba(255,107,53,.1);border-radius:12px;padding:20px;text-align:center;transition:border-color .3s}
+.kpi:hover{border-color:rgba(255,107,53,.3)}
+.kpi-value{font-size:2rem;font-weight:800;font-family:var(--font-mono);color:var(--primary);line-height:1.2}
+.kpi-label{font-size:.75rem;color:var(--text-2);margin-top:4px;letter-spacing:.04em;text-transform:uppercase}
+.kpi.danger .kpi-value{color:var(--danger)}
+.kpi.warning .kpi-value{color:var(--warning)}
+.kpi.accent .kpi-value{color:var(--accent)}
+.kpi.secondary .kpi-value{color:var(--secondary)}
+
+.section{margin:40px 0}
+.section-title{font-size:1.1rem;font-weight:700;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,107,53,.15);display:flex;align-items:center;gap:8px}
+.section-title span{font-size:1.2rem}
+
+.chart-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:900px){.chart-grid{grid-template-columns:1fr}}
+.chart-card{background:var(--bg-2);border:1px solid rgba(255,107,53,.08);border-radius:12px;padding:20px}
+.chart-card h3{font-size:.85rem;color:var(--text-2);margin-bottom:12px;font-weight:600}
+.chart-card canvas{max-height:300px}
+
+.table-wrap{overflow-x:auto;margin-top:12px}
+table{width:100%;border-collapse:collapse;font-size:.8rem}
+th{text-align:left;padding:10px 12px;background:var(--bg-3);color:var(--text-2);font-weight:600;letter-spacing:.03em;border-bottom:1px solid rgba(255,107,53,.1)}
+td{padding:8px 12px;border-bottom:1px solid var(--bg-3);color:var(--text-1)}
+tr:hover td{background:rgba(255,107,53,.03)}
+.domain-link{color:var(--primary);font-family:var(--font-mono);font-size:.78rem}
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.7rem;font-weight:600}
+.badge-danger{background:rgba(255,51,68,.15);color:var(--danger)}
+.badge-warning{background:rgba(255,170,0,.15);color:var(--warning)}
+.badge-success{background:rgba(0,204,122,.15);color:var(--success)}
+.badge-accent{background:rgba(0,229,204,.15);color:var(--accent)}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:900px){.two-col{grid-template-columns:1fr}}
+
+.footer{text-align:center;padding:40px 0 20px;color:var(--text-3);font-size:.75rem}
+.footer a{color:var(--text-2)}
 </style>
 </head>
 <body>
-<nav class="nav"><div class="nb"><span style="font-size:1.5rem">🎬</span><span class="nt">ASAM ANIME PIRACY</span></div><div class="nl"><a href="#overview" class="on">Overview</a><a href="#studios">Studios</a><a href="#sites">Sites</a><a href="#enforcement">Enforcement</a></div><div style="display:flex;align-items:center;gap:16px"><div class="tb"><div class="pd"></div>ACTIVE THREAT</div><div class="df">2026-03-30</div></div></nav>
-<div class="mn">
-<div class="hero" id="overview"><h1>Anime Piracy Ecosystem Intelligence</h1><p>366 confirmed anime pirate sites. 108,012 unique titles cataloged. 178 studios tracked. Manga and movie sites excluded — anime only.</p></div>
-<div class="kg">
-<div class="k d"><div class="kv">366</div><div class="kl">Anime Pirate Sites</div></div>
-<div class="k w"><div class="kv">108,012</div><div class="kl">Unique Titles</div></div>
-<div class="k a"><div class="kv">174,590</div><div class="kl">Pirate URLs</div></div>
-<div class="k s"><div class="kv">178</div><div class="kl">Studios Impacted</div></div>
-<div class="k"><div class="kv">3,642</div><div class="kl">Rights-Matched</div></div>
-<div class="k"><div class="kv">30+</div><div class="kl">Languages</div></div>
+
+<nav class="navbar">
+  <div class="nav-brand">
+    <span style="font-size:1.5rem">🎬</span>
+    <span class="nav-brand-text">ASAM ANIME PIRACY</span>
+  </div>
+  <div style="display:flex;align-items:center;gap:16px">
+    <div class="threat-badge"><div class="pulse-dot"></div>ACTIVE THREAT</div>
+    <div class="data-fresh">Snapshot 2026-04-01</div>
+  </div>
+</nav>
+
+<div class="main">
+
+<div class="hero">
+  <h1>Anime Piracy Intelligence Dashboard</h1>
+  <p>Comprehensive analysis of 28,200 domains across the anime piracy ecosystem.
+     2,234 confirmed pirate sites with 375K+ catalog entries extracted. 30 studios, 129 works tracked.</p>
 </div>
 
-<div class="sec" id="studios"><div class="st"><span>🏭</span> Animation Studio Damage Report</div>
-<div class="g2">
-<div class="c"><h3>Studio Piracy Exposure (URLs)</h3><canvas id="c1"></canvas></div>
-<div class="c"><h3>Studio Pirate Site Reach (Domains)</h3><canvas id="c2"></canvas></div>
-</div>
-<div class="c" style="margin-top:20px"><h3>Full Studio Damage Table</h3><div class="tw"><table><thead><tr><th>Studio</th><th>Titles</th><th>Sites</th><th>URLs</th><th>Severity</th></tr></thead><tbody id="t1"></tbody></table></div></div>
-</div>
-
-<div class="sec"><div class="st"><span>📜</span> Licensor / Distributor Impact</div>
-<div class="g2">
-<div class="c"><h3>Licensors by Exposure</h3><canvas id="c3"></canvas></div>
-<div class="c"><h3>Enforcement Priority</h3><div style="padding:10px;color:var(--t2);font-size:.85rem;line-height:2.2">
-<div>🔴 <strong>VIZ Media</strong> — 27 titles / 18 pirate sites (Shueisha/Shogakukan)</div>
-<div>🔴 <strong>Discotek Media</strong> — 12 titles / 9 sites (classic anime)</div>
-<div>🟡 <strong>Funimation/Crunchyroll</strong> — 10 titles / 7 sites (Sony)</div>
-<div>🟡 <strong>Tokyopop</strong> — 7 titles / 8 sites</div>
-<div>🟢 <strong>GKIDS</strong> — 2 titles / 5 sites (Studio Ghibli NA)</div>
-<div>🟢 <strong>Sentai Filmworks</strong> — 1 title / 2 sites</div>
-<div style="margin-top:12px;font-size:.75rem;color:var(--t3)">Note: Many titles lack licensor data. Actual exposure is significantly higher.</div>
-</div></div>
-</div></div>
-
-<div class="sec" id="sites"><div class="st"><span>🏴‍☠️</span> Top Anime Pirate Sites</div>
-<div class="g2">
-<div class="c"><h3>Top 15 by Catalog Size</h3><canvas id="c4"></canvas></div>
-<div class="c"><h3>TLD Distribution</h3><canvas id="c5"></canvas></div>
-</div>
-<div class="c" style="margin-top:20px"><h3>Site Catalog</h3><div class="tw"><table><thead><tr><th>#</th><th>Domain</th><th>Titles</th><th>Type</th></tr></thead><tbody id="t2"></tbody></table></div></div>
+<div class="kpi-grid">
+  <div class="kpi danger"><div class="kpi-value">28,200</div><div class="kpi-label">Domains Analyzed</div></div>
+  <div class="kpi"><div class="kpi-value">2,234</div><div class="kpi-label">Confirmed Pirate</div></div>
+  <div class="kpi warning"><div class="kpi-value">197,235</div><div class="kpi-label">Unique Titles</div></div>
+  <div class="kpi accent"><div class="kpi-value">79,182</div><div class="kpi-label">Titles Matched (40.1%)</div></div>
+  <div class="kpi secondary"><div class="kpi-value">255,314</div><div class="kpi-label">Total Pirate URLs</div></div>
+  <div class="kpi"><div class="kpi-value">30</div><div class="kpi-label">Studios Tracked</div></div>
 </div>
 
-<div class="sec" id="enforcement"><div class="st"><span>⚙️</span> Detection Pipeline & Methodology</div>
-<div class="g3">
-<div class="c"><h3>Collection</h3><div style="color:var(--t2);font-size:.85rem;line-height:2">📥 340K URLs crawled<br>🌐 31,454 domains<br>🧹 28,200 after cleanup<br>🤖 2,234 confirmed pirate</div></div>
-<div class="c"><h3>Extraction</h3><div style="color:var(--t2);font-size:.85rem;line-height:2">🔍 366 anime sites cataloged<br>📚 108,012 unique titles<br>🔗 3,642 rights-matched<br>🏭 178 studios tracked</div></div>
-<div class="c"><h3>Validation</h3><div style="color:var(--t2);font-size:.85rem;line-height:2">🧠 v51 HGB (56 features)<br>✅ Precision 95.7%<br>🎯 Perplexity cross-validated<br>📡 OSINT only</div></div>
-</div></div>
+<!-- Domain Classification -->
+<div class="section">
+  <div class="section-title"><span>📊</span> Domain Classification</div>
+  <div class="chart-grid">
+    <div class="chart-card">
+      <h3>Classification Distribution (28,200 domains)</h3>
+      <canvas id="classChart"></canvas>
+    </div>
+    <div class="chart-card">
+      <h3>Piracy Detection Pipeline</h3>
+      <div style="padding:20px;color:var(--text-2);font-size:.85rem;line-height:2.2">
+        <div>📥 <strong>31,454</strong> raw domains from Brave crawl (340K URLs, 50 languages)</div>
+        <div>→ 🧹 <strong>28,200</strong> after cleanup (dead/legit removed)</div>
+        <div>→ 🤖 <strong>2,234</strong> confirmed pirate (v51 HGB classifier, prob>0.9)</div>
+        <div>→ 📚 <strong>666</strong> sites with catalog extracted (Playwright + API)</div>
+        <div>→ 📖 <strong>375,609</strong> catalog entries → <strong>197,235</strong> unique titles</div>
+        <div>→ 🔗 <strong>79,182</strong> matched to anime DB (40.1%) — <em>expanding...</em></div>
+        <div>→ 🏢 <strong>30</strong> studios, <strong>129</strong> works with rights holders</div>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="ft"><p>ASAM Anime Piracy Intelligence — <a href="https://agentic-governance.github.io/asam-game-piracy-dashboard/">Game Piracy Dashboard</a> | 2026-03-30</p></div>
+
+<!-- Studio Impact (PRIMARY) -->
+<div class="section">
+  <div class="section-title"><span>🏢</span> Studio Damage Ranking — Top 20</div>
+  <div class="chart-grid">
+    <div class="chart-card">
+      <h3>Total Pirate URLs by Studio</h3>
+      <canvas id="studioUrlChart"></canvas>
+    </div>
+    <div class="chart-card">
+      <h3>Pirate Domains by Studio</h3>
+      <canvas id="studioDomainChart"></canvas>
+    </div>
+  </div>
+  <div class="table-wrap" style="margin-top:20px">
+    <table id="studioTable">
+      <thead><tr><th>#</th><th>Studio</th><th>Works</th><th>Pirate URLs</th><th>Pirate Domains</th><th>Top Work</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Top Works by Studio -->
+<div class="section">
+  <div class="section-title"><span>🎯</span> Most Pirated Anime Works</div>
+  <div class="chart-card">
+    <div class="table-wrap">
+      <table id="topWorksTable">
+        <thead><tr><th>#</th><th>Title</th><th>Studio</th><th>Pirate URLs</th><th>Pirate Domains</th><th>Languages</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Top Pirate Sites (Anime Only) -->
+<div class="section">
+  <div class="section-title"><span>🏴‍☠️</span> Top 30 Anime Pirate Sites by Catalog Size</div>
+  <div class="table-wrap">
+    <table id="topSites">
+      <thead><tr><th>#</th><th>Domain</th><th>Catalog Entries</th><th>Type</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- TLD & Geography -->
+<div class="section">
+  <div class="section-title"><span>🌍</span> TLD & Geography</div>
+  <div class="chart-grid">
+    <div class="chart-card">
+      <h3>Top TLDs of Pirate Sites</h3>
+      <canvas id="tldChart"></canvas>
+    </div>
+    <div class="chart-card">
+      <h3>Catalog Size Distribution</h3>
+      <canvas id="distChart"></canvas>
+    </div>
+  </div>
+</div>
+
+<!-- Methodology -->
+<div class="section">
+  <div class="section-title"><span>📋</span> Methodology</div>
+  <div class="chart-card" style="max-width:900px">
+    <div style="color:var(--text-2);font-size:.85rem;line-height:1.8">
+      <p><strong>Data Collection:</strong> Brave Search API (10,000+ queries across 50 languages, 150+ anime titles) producing 340K+ raw URLs from 31,454 domains.</p>
+      <p><strong>Classification:</strong> ASAM Viewer v51 HistGradientBoosting classifier (56 features: DNS, TLS, domain name, network hop). Threshold 0.57, validated against Perplexity API ground truth (Accuracy 94.8%, Precision 95.7%, Recall 98.9%, F1 97.3%).</p>
+      <p><strong>Catalog Extraction:</strong> Playwright headless browser with DOM extraction, network interception, pagination (up to 200 pages/site), ScraperAPI fallback for Cloudflare-protected sites. 666 sites crawled, 375K+ entries extracted.</p>
+      <p><strong>Rights Matching:</strong> Multi-DB approach — AniList GraphQL API (11,600+ anime) + MyAnimeList Jikan API (60K+ anime, fetching) + Kitsu API (15K+) + manual curation (148 titles). 10-round fuzzy matching pipeline with CJK support. Currently at 40.1% match rate, expanding to 60%+ with unified DB.</p>
+      <p><strong>Studio Damage:</strong> Cross-referenced from original Brave crawl data (210K+ URLs across 2,234 pirate domains × 129 tracked works × 30+ languages). Each studio-work-domain combination independently verified.</p>
+      <p><strong>OSINT Only:</strong> No accounts created. No content downloaded. All data from public sources.</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <p>ASAM Anime Piracy Intelligence Dashboard — Updated 2026-04-01</p>
+  <p>Part of the <a href="https://agentic-governance.github.io/asam-game-piracy-dashboard/">ASAM Research Project</a></p>
+</div>
 
 <script>
-const C=Chart;C.defaults.color='#7a9bbf';C.defaults.borderColor='rgba(255,107,53,0.06)';C.defaults.font.family="'Inter',sans-serif";
-const S=[["A-1 Pictures",176,42,390],["MADHOUSE",188,46,341],["J.C.STAFF",161,36,262],["Toei Animation",150,51,260],["MAPPA",131,48,244],["CloverWorks",99,35,235],["Studio Pierrot",108,41,233],["WIT STUDIO",107,34,220],["Bones",123,28,214],["Brain's Base",69,23,163],["Studio Deen",88,25,156],["Kinema Citrus",42,19,138],["Production I.G",72,18,124],["Sunrise",55,22,118],["Kyoto Animation",38,16,105],["TMS Entertainment",48,20,98],["ufotable",32,28,92],["David Production",45,14,88],["White Fox",35,15,82],["Shaft",28,12,71]];
-const L=[["VIZ Media",27,18,73],["Discotek",12,9,21],["Funimation",10,7,18],["Tokyopop",7,8,11],["Geneon",3,5,6],["ADV Films",4,3,6],["GKIDS",2,5,5],["Sentai",1,2,2]];
-const D=[["animetosho.org",18947],["animesdata.com",14907],["shibaanime.com",5970],["masteranime.tv",5967],["lnwanime.com",5817],["gogoanime.onl",4835],["gg-anime.com",3841],["animefantastica.com",3584],["ver-anime.com",3468],["animewatchtv.su",1117],["wco.tv",980],["animesuge.cc",844],["animeflv.io",680],["kickassanime.am",575],["9animetv.to",420],["animekai.to",380],["hianime.to",350],["animeunity.so",310],["neko-sama.fr",285],["otakudesu.lol",260]];
-new C(document.getElementById('c1'),{type:'bar',data:{labels:S.slice(0,12).map(s=>s[0]),datasets:[{label:'URLs',data:S.slice(0,12).map(s=>s[3]),backgroundColor:'rgba(255,107,53,0.7)',borderRadius:4}]},options:{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:{color:'rgba(255,107,53,0.05)'}},y:{grid:{display:false}}}}});
-new C(document.getElementById('c2'),{type:'bar',data:{labels:S.slice(0,12).map(s=>s[0]),datasets:[{label:'Sites',data:S.slice(0,12).map(s=>s[2]),backgroundColor:'rgba(107,79,255,0.7)',borderRadius:4}]},options:{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:{color:'rgba(107,79,255,0.05)'}},y:{grid:{display:false}}}}});
-new C(document.getElementById('c3'),{type:'bar',data:{labels:L.map(l=>l[0]),datasets:[{label:'Titles',data:L.map(l=>l[1]),backgroundColor:'rgba(0,229,204,0.6)',borderRadius:4},{label:'Sites',data:L.map(l=>l[2]),backgroundColor:'rgba(255,170,0,0.6)',borderRadius:4}]},options:{plugins:{legend:{position:'top',labels:{font:{size:10}}}},scales:{x:{grid:{display:false}},y:{grid:{color:'rgba(0,229,204,0.05)'}}}}});
-new C(document.getElementById('c4'),{type:'bar',data:{labels:D.slice(0,15).map(s=>s[0]),datasets:[{label:'Titles',data:D.slice(0,15).map(s=>s[1]),backgroundColor:'rgba(255,51,68,0.6)',borderRadius:4}]},options:{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:{color:'rgba(255,51,68,0.05)'}},y:{grid:{display:false},ticks:{font:{size:10,family:"'JetBrains Mono',monospace"}}}}}});
-const T={"com":98,"tv":34,"to":28,"net":26,"org":18,"cc":15,"online":12,"me":11,"fr":10,"su":8};
-new C(document.getElementById('c5'),{type:'doughnut',data:{labels:Object.keys(T).map(t=>'.'+t),datasets:[{data:Object.values(T),backgroundColor:['#ff6b35','#6b4fff','#00e5cc','#ff3344','#ffaa00','#00cc7a','#ff9b6b','#7a9bbf','#3d5470','#1a8cff'],borderWidth:0}]},options:{plugins:{legend:{position:'right',labels:{padding:8,font:{size:10}}}}}});
-const t1=document.getElementById('t1');S.forEach(([s,t,d,u])=>{const sv=u>=300?'CRITICAL':u>=200?'HIGH':u>=100?'MEDIUM':'LOW';const cl=u>=300?'bd':u>=200?'bw':u>=100?'ba':'bg';t1.innerHTML+=`<tr><td><strong>${s}</strong></td><td class="mo">${t}</td><td class="mo">${d}</td><td class="mo">${u.toLocaleString()}</td><td><span class="b ${cl}">${sv}</span></td></tr>`});
-const t2=document.getElementById('t2');D.forEach(([d,c],i)=>{t2.innerHTML+=`<tr><td>${i+1}</td><td><span class="mo" style="color:var(--p)">${d}</span></td><td class="mo" style="font-weight:600">${c.toLocaleString()}</td><td><span class="b bd">Anime</span></td></tr>`});
+const C = Chart;
+C.defaults.color = '#7a9bbf';
+C.defaults.borderColor = 'rgba(255,107,53,0.08)';
+C.defaults.font.family = "'Inter',sans-serif";
+
+// Classification
+new C(document.getElementById('classChart'),{type:'doughnut',data:{
+  labels:['Confirmed Pirate (2,234)','Likely Pirate (10,644)','Legit / Other (15,322)'],
+  datasets:[{data:[2234,10644,15322],backgroundColor:['#ff3344','#ffaa00','#00cc7a'],borderWidth:0}]
+},options:{plugins:{legend:{position:'bottom',labels:{padding:12,font:{size:11}}}}}});
+
+// Studio data
+const studioData = [
+  {name:'Pierrot',works:11,urls:21523,domains:4046,top:'Boruto (2,478)'},
+  {name:'Studio Ghibli',works:9,urls:20636,domains:4080,top:'The Boy and the Heron (2,796)'},
+  {name:'Madhouse',works:12,urls:20596,domains:4255,top:'Death Note (2,498)'},
+  {name:'Toei Animation',works:9,urls:18981,domains:4204,top:'One Piece (2,923)'},
+  {name:'A-1 Pictures',works:10,urls:18788,domains:3864,top:'Sword Art Online (2,536)'},
+  {name:'Bones',works:7,urls:14244,domains:2980,top:'Fullmetal Alchemist (2,506)'},
+  {name:'TMS Entertainment',works:7,urls:12675,domains:2875,top:'Dr. Stone (2,090)'},
+  {name:'David Production',works:5,urls:12566,domains:2983,top:"JoJo's Bizarre Adventure (2,866)"},
+  {name:'Production I.G',works:7,urls:11299,domains:2690,top:'Haikyuu!! (2,255)'},
+  {name:'CloverWorks',works:5,urls:10399,domains:2527,top:'Spy x Family (2,515)'},
+  {name:'MAPPA',works:5,urls:9544,domains:2334,top:'Jujutsu Kaisen (2,613)'},
+  {name:'Liden Films',works:4,urls:9274,domains:2419,top:'Tokyo Revengers (2,663)'},
+  {name:'Sunrise',works:4,urls:7376,domains:1921,top:'Gintama (2,215)'},
+  {name:'Lerche',works:3,urls:6746,domains:1785,top:'Assassination Classroom (2,476)'},
+  {name:'WIT/MAPPA',works:2,urls:5643,domains:1673,top:'Attack on Titan (3,189)'},
+  {name:'Kyoto Animation',works:3,urls:5293,domains:1509,top:'Violet Evergarden (2,151)'},
+  {name:'8bit',works:2,urls:5009,domains:1427,top:'That Time I Got Reincarnated (2,558)'},
+  {name:'CoMix Wave',works:3,urls:4922,domains:1319,top:'Your Name (2,075)'},
+  {name:'ufotable',works:2,urls:4690,domains:1408,top:'Demon Slayer (2,580)'},
+  {name:'Shin-Ei Animation',works:2,urls:4517,domains:1206,top:'Doraemon (2,327)'},
+];
+
+// Studio URLs chart
+new C(document.getElementById('studioUrlChart'),{type:'bar',data:{
+  labels:studioData.map(s=>s.name),
+  datasets:[{label:'Pirate URLs',data:studioData.map(s=>s.urls),backgroundColor:'rgba(255,107,53,0.65)',borderRadius:4}]
+},options:{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:{color:'rgba(255,107,53,0.05)'}},y:{grid:{display:false},ticks:{font:{size:10}}}}}});
+
+// Studio Domains chart
+new C(document.getElementById('studioDomainChart'),{type:'bar',data:{
+  labels:studioData.map(s=>s.name),
+  datasets:[{label:'Pirate Domains',data:studioData.map(s=>s.domains),backgroundColor:'rgba(107,79,255,0.6)',borderRadius:4}]
+},options:{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:{color:'rgba(107,79,255,0.05)'}},y:{grid:{display:false},ticks:{font:{size:10}}}}}});
+
+// Studio table
+const stBody = document.querySelector('#studioTable tbody');
+studioData.forEach((s,i)=>{
+  stBody.innerHTML+=`<tr>
+    <td>${i+1}</td>
+    <td style="font-weight:600">${s.name}</td>
+    <td style="text-align:center">${s.works}</td>
+    <td style="font-family:var(--font-mono);font-weight:600;color:var(--danger)">${s.urls.toLocaleString()}</td>
+    <td style="font-family:var(--font-mono)">${s.domains.toLocaleString()}</td>
+    <td style="font-size:.78rem;color:var(--text-2)">${s.top}</td>
+  </tr>`;
+});
+
+// Top works
+const topWorks = [
+  ['Attack on Titan','WIT Studio / MAPPA',3189,1159,31],
+  ['One Piece','Toei Animation',2923,982,31],
+  ["JoJo's Bizarre Adventure",'David Production',2866,951,31],
+  ['The Boy and the Heron','Studio Ghibli',2796,1016,31],
+  ['Demon Slayer','ufotable',2580,910,31],
+  ['That Time I Got Reincarnated as a Slime','8bit',2558,889,31],
+  ['Sword Art Online','A-1 Pictures',2536,875,31],
+  ['Spy x Family','CloverWorks',2515,873,31],
+  ['Fullmetal Alchemist: Brotherhood','Bones',2506,895,31],
+  ['Death Note','Madhouse',2498,945,31],
+  ['Boruto: Naruto Next Generations','Pierrot',2478,822,30],
+  ['Assassination Classroom','Lerche',2476,846,31],
+  ['Grave of the Fireflies','Studio Ghibli',2589,847,31],
+  ['Black Clover','Pierrot',2466,867,31],
+  ['Yu Yu Hakusho','Pierrot',2447,869,30],
+  ['Castle in the Sky','Studio Ghibli',2366,839,30],
+  ['Hunter x Hunter','Madhouse',2347,846,31],
+  ['Frieren: Beyond Journey\'s End','Madhouse',2326,783,31],
+  ['Doraemon','Shin-Ei Animation',2327,758,31],
+  ["Howl's Moving Castle",'Studio Ghibli',2295,808,31],
+];
+topWorks.sort((a,b)=>b[2]-a[2]);
+const twBody = document.querySelector('#topWorksTable tbody');
+topWorks.forEach(([t,s,u,d,l],i)=>{
+  twBody.innerHTML+=`<tr>
+    <td>${i+1}</td>
+    <td style="font-weight:600">${t}</td>
+    <td style="color:var(--text-2);font-size:.78rem">${s}</td>
+    <td style="font-family:var(--font-mono);font-weight:600;color:var(--danger)">${u.toLocaleString()}</td>
+    <td style="font-family:var(--font-mono)">${d.toLocaleString()}</td>
+    <td style="text-align:center">${l}</td>
+  </tr>`;
+});
+
+// Top anime pirate sites (anime-only, excluding manga/movie/adult)
+const sites = [
+  ["animetosho.org",18947,"Anime/Torrent"],
+  ["animesdata.com",14907,"Anime DB"],
+  ["shibaanime.com",5970,"Anime"],
+  ["masteranime.tv",5969,"Anime"],
+  ["lnwanime.com",5817,"Anime (Thai)"],
+  ["gogoanime.onl",4835,"Anime"],
+  ["gg-anime.com",3842,"Anime"],
+  ["animefantastica.com",3584,"Anime (Spanish)"],
+  ["ver-anime.com",3470,"Anime (Spanish)"],
+  ["intoxianime.com",2432,"Anime (Portuguese)"],
+  ["animegoo.life",2311,"Anime"],
+  ["1animego.life",2311,"Anime"],
+  ["animego.lol",2311,"Anime"],
+  ["indy-anime.net",2023,"Anime"],
+  ["myanimeguru.com",2009,"Anime"],
+  ["anime-4ever.ru",1995,"Anime (Russian)"],
+  ["asyaanimeleri.top",1604,"Anime (Turkish)"],
+  ["animewatchtv.su",1117,"Anime (Russian)"],
+  ["animefire.plus",1089,"Anime (Portuguese)"],
+  ["animetoast.cc",1042,"Anime (German)"],
+  ["hianime.to",987,"Anime"],
+  ["9animetv.to",934,"Anime"],
+  ["animeshouse.net",912,"Anime (Portuguese)"],
+  ["animedao.to",876,"Anime"],
+  ["animepahe.ru",845,"Anime"],
+  ["zoro.to",823,"Anime"],
+  ["animixplay.to",801,"Anime"],
+  ["kickassanime.am",778,"Anime"],
+  ["animesuge.to",756,"Anime"],
+  ["kaido.to",734,"Anime"],
+];
+const sBody = document.querySelector('#topSites tbody');
+sites.forEach(([d,c,t],i)=>{
+  const lang = t.includes('(') ? t.match(/\(([^)]+)\)/)[1] : '';
+  const badge = lang ? `<span class="badge badge-accent">${lang}</span>` : '';
+  sBody.innerHTML+=`<tr>
+    <td>${i+1}</td>
+    <td><span class="domain-link">${d}</span> ${badge}</td>
+    <td style="font-family:var(--font-mono);font-weight:600">${c.toLocaleString()}</td>
+    <td><span class="badge badge-danger">Anime</span></td>
+  </tr>`;
+});
+
+// TLD
+new C(document.getElementById('tldChart'),{type:'bar',data:{
+  labels:['.com','.net','.org','.ru','.to','.tv','.online','.me','.life','.top','.su','.cc'],
+  datasets:[{label:'Domains',data:[241,66,39,31,28,13,17,11,8,7,6,5],backgroundColor:'rgba(0,229,204,0.6)',borderRadius:4}]
+},options:{plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{grid:{color:'rgba(0,229,204,0.05)'}}}}});
+
+// Distribution
+new C(document.getElementById('distChart'),{type:'bar',data:{
+  labels:['5,000+','1,000-4,999','100-999','10-99','1-9'],
+  datasets:[{label:'Domains',data:[15,52,145,255,199],backgroundColor:'rgba(255,107,53,0.7)',borderRadius:4}]
+},options:{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:{color:'rgba(255,107,53,0.05)'}},y:{grid:{display:false}}}}});
 </script>
 </body>
 </html>
