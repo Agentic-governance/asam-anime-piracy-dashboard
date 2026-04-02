@@ -1,0 +1,602 @@
+[
+  {
+    "studio": "Toei Animation",
+    "titles": 12899,
+    "domains": 216,
+    "urls": 54443
+  },
+  {
+    "studio": "Sunrise",
+    "titles": 7800,
+    "domains": 189,
+    "urls": 33330
+  },
+  {
+    "studio": "J.C.Staff",
+    "titles": 8576,
+    "domains": 182,
+    "urls": 24816
+  },
+  {
+    "studio": "Studio Pierrot",
+    "titles": 6604,
+    "domains": 177,
+    "urls": 24801
+  },
+  {
+    "studio": "Madhouse",
+    "titles": 6439,
+    "domains": 208,
+    "urls": 22702
+  },
+  {
+    "studio": "Ruo Hong Culture",
+    "titles": 8824,
+    "domains": 53,
+    "urls": 20725
+  },
+  {
+    "studio": "TMS Entertainment",
+    "titles": 5124,
+    "domains": 172,
+    "urls": 20303
+  },
+  {
+    "studio": "Studio Deen",
+    "titles": 5464,
+    "domains": 165,
+    "urls": 19485
+  },
+  {
+    "studio": "Suoyi Technology",
+    "titles": 8313,
+    "domains": 43,
+    "urls": 18404
+  },
+  {
+    "studio": "OLM",
+    "titles": 4218,
+    "domains": 169,
+    "urls": 17205
+  },
+  {
+    "studio": "A-1 Pictures",
+    "titles": 5689,
+    "domains": 187,
+    "urls": 16078
+  },
+  {
+    "studio": "Production I.G",
+    "titles": 4818,
+    "domains": 177,
+    "urls": 14797
+  },
+  {
+    "studio": "Bones",
+    "titles": 4740,
+    "domains": 166,
+    "urls": 13054
+  },
+  {
+    "studio": "Studio 4°C",
+    "titles": 562,
+    "domains": 122,
+    "urls": 12283
+  },
+  {
+    "studio": "Nippon Animation",
+    "titles": 3052,
+    "domains": 143,
+    "urls": 10766
+  },
+  {
+    "studio": "SILVER LINK.",
+    "titles": 3311,
+    "domains": 144,
+    "urls": 10196
+  },
+  {
+    "studio": "Satelight",
+    "titles": 2475,
+    "domains": 133,
+    "urls": 8567
+  },
+  {
+    "studio": "Gonzo",
+    "titles": 1918,
+    "domains": 131,
+    "urls": 8481
+  },
+  {
+    "studio": "Xebec",
+    "titles": 1868,
+    "domains": 118,
+    "urls": 8132
+  },
+  {
+    "studio": "Wit Studio",
+    "titles": 3204,
+    "domains": 173,
+    "urls": 8085
+  },
+  {
+    "studio": "LIDENFILMS",
+    "titles": 2811,
+    "domains": 151,
+    "urls": 7918
+  },
+  {
+    "studio": "Brain's Base",
+    "titles": 2668,
+    "domains": 146,
+    "urls": 7498
+  },
+  {
+    "studio": "Tatsunoko Production",
+    "titles": 1441,
+    "domains": 111,
+    "urls": 7369
+  },
+  {
+    "studio": "MAPPA",
+    "titles": 2272,
+    "domains": 175,
+    "urls": 6909
+  },
+  {
+    "studio": "P.A. Works",
+    "titles": 3009,
+    "domains": 142,
+    "urls": 6606
+  },
+  {
+    "studio": "Shin-Ei Animation",
+    "titles": 2108,
+    "domains": 132,
+    "urls": 6338
+  },
+  {
+    "studio": "Doga Kobo",
+    "titles": 1934,
+    "domains": 125,
+    "urls": 6301
+  },
+  {
+    "studio": "Sparkly Key Animation Studio",
+    "titles": 2955,
+    "domains": 60,
+    "urls": 6272
+  },
+  {
+    "studio": "Gallop",
+    "titles": 1401,
+    "domains": 128,
+    "urls": 6199
+  },
+  {
+    "studio": "Kyoto Animation",
+    "titles": 2101,
+    "domains": 141,
+    "urls": 5697
+  },
+  {
+    "studio": "Shaft",
+    "titles": 1732,
+    "domains": 130,
+    "urls": 5495
+  },
+  {
+    "studio": "AIC",
+    "titles": 1729,
+    "domains": 103,
+    "urls": 5237
+  },
+  {
+    "studio": "CloverWorks",
+    "titles": 1990,
+    "domains": 155,
+    "urls": 5074
+  },
+  {
+    "studio": "8bit",
+    "titles": 1693,
+    "domains": 141,
+    "urls": 4734
+  },
+  {
+    "studio": "Foch Film",
+    "titles": 2182,
+    "domains": 68,
+    "urls": 4703
+  },
+  {
+    "studio": "Lerche",
+    "titles": 1495,
+    "domains": 146,
+    "urls": 4618
+  },
+  {
+    "studio": "SynergySP",
+    "titles": 1207,
+    "domains": 120,
+    "urls": 4377
+  },
+  {
+    "studio": "Diomedéa",
+    "titles": 1241,
+    "domains": 119,
+    "urls": 4230
+  },
+  {
+    "studio": "DLE",
+    "titles": 1009,
+    "domains": 89,
+    "urls": 4222
+  },
+  {
+    "studio": "David Production",
+    "titles": 1615,
+    "domains": 145,
+    "urls": 4211
+  },
+  {
+    "studio": "Bandai Namco Pictures",
+    "titles": 1348,
+    "domains": 122,
+    "urls": 4159
+  },
+  {
+    "studio": "Project No.9",
+    "titles": 1364,
+    "domains": 117,
+    "urls": 3987
+  },
+  {
+    "studio": "Kinema Citrus",
+    "titles": 1506,
+    "domains": 147,
+    "urls": 3982
+  },
+  {
+    "studio": "feel.",
+    "titles": 1258,
+    "domains": 128,
+    "urls": 3959
+  },
+  {
+    "studio": "Group TAC",
+    "titles": 768,
+    "domains": 95,
+    "urls": 3908
+  },
+  {
+    "studio": "White Fox",
+    "titles": 1417,
+    "domains": 142,
+    "urls": 3859
+  },
+  {
+    "studio": "Haoliners Animation",
+    "titles": 1311,
+    "domains": 101,
+    "urls": 3830
+  },
+  {
+    "studio": "Ashi Productions",
+    "titles": 750,
+    "domains": 105,
+    "urls": 3759
+  },
+  {
+    "studio": "Studio Gokumi",
+    "titles": 1212,
+    "domains": 124,
+    "urls": 3558
+  },
+  {
+    "studio": "Tezuka Productions",
+    "titles": 1005,
+    "domains": 120,
+    "urls": 3556
+  },
+  {
+    "studio": "Studio Comet",
+    "titles": 606,
+    "domains": 109,
+    "urls": 3199
+  },
+  {
+    "studio": "Tokyo Movie Shinsha",
+    "titles": 774,
+    "domains": 104,
+    "urls": 3148
+  },
+  {
+    "studio": "Zero-G",
+    "titles": 989,
+    "domains": 123,
+    "urls": 3147
+  },
+  {
+    "studio": "ufotable",
+    "titles": 1224,
+    "domains": 141,
+    "urls": 3041
+  },
+  {
+    "studio": "TNK",
+    "titles": 1025,
+    "domains": 115,
+    "urls": 2998
+  },
+  {
+    "studio": "Gainax",
+    "titles": 897,
+    "domains": 102,
+    "urls": 2970
+  },
+  {
+    "studio": "Passione",
+    "titles": 929,
+    "domains": 119,
+    "urls": 2966
+  },
+  {
+    "studio": "Ajia-do",
+    "titles": 864,
+    "domains": 122,
+    "urls": 2938
+  },
+  {
+    "studio": "EMT Squared",
+    "titles": 935,
+    "domains": 124,
+    "urls": 2935
+  },
+  {
+    "studio": "Zexcs",
+    "titles": 770,
+    "domains": 99,
+    "urls": 2893
+  },
+  {
+    "studio": "Arms",
+    "titles": 1205,
+    "domains": 109,
+    "urls": 2892
+  },
+  {
+    "studio": "Telecom Animation Film",
+    "titles": 878,
+    "domains": 130,
+    "urls": 2887
+  },
+  {
+    "studio": "Seven Arcs",
+    "titles": 929,
+    "domains": 121,
+    "urls": 2787
+  },
+  {
+    "studio": "Studio Hibari",
+    "titles": 659,
+    "domains": 107,
+    "urls": 2748
+  },
+  {
+    "studio": "Original Force",
+    "titles": 983,
+    "domains": 41,
+    "urls": 2691
+  },
+  {
+    "studio": "C2C",
+    "titles": 953,
+    "domains": 122,
+    "urls": 2595
+  },
+  {
+    "studio": "Seven",
+    "titles": 1177,
+    "domains": 87,
+    "urls": 2398
+  },
+  {
+    "studio": "Artland",
+    "titles": 879,
+    "domains": 89,
+    "urls": 2381
+  },
+  {
+    "studio": "B.CMAY PICTURES",
+    "titles": 952,
+    "domains": 92,
+    "urls": 2332
+  },
+  {
+    "studio": "Actas",
+    "titles": 853,
+    "domains": 119,
+    "urls": 2290
+  },
+  {
+    "studio": "CG Year",
+    "titles": 1023,
+    "domains": 37,
+    "urls": 2199
+  },
+  {
+    "studio": "SANZIGEN",
+    "titles": 841,
+    "domains": 112,
+    "urls": 2159
+  },
+  {
+    "studio": "Shenman Entertainment",
+    "titles": 855,
+    "domains": 37,
+    "urls": 2122
+  },
+  {
+    "studio": "Maho Film",
+    "titles": 706,
+    "domains": 112,
+    "urls": 2102
+  },
+  {
+    "studio": "Asahi Production",
+    "titles": 714,
+    "domains": 113,
+    "urls": 2058
+  },
+  {
+    "studio": "GoHands",
+    "titles": 677,
+    "domains": 101,
+    "urls": 2047
+  },
+  {
+    "studio": "A.C.G.T.",
+    "titles": 567,
+    "domains": 113,
+    "urls": 2024
+  },
+  {
+    "studio": "Trigger",
+    "titles": 707,
+    "domains": 128,
+    "urls": 2002
+  },
+  {
+    "studio": "Gathering",
+    "titles": 271,
+    "domains": 40,
+    "urls": 1963
+  },
+  {
+    "studio": "Geek Toys",
+    "titles": 540,
+    "domains": 111,
+    "urls": 1916
+  },
+  {
+    "studio": "asread.",
+    "titles": 654,
+    "domains": 117,
+    "urls": 1913
+  },
+  {
+    "studio": "L²Studio",
+    "titles": 911,
+    "domains": 36,
+    "urls": 1906
+  },
+  {
+    "studio": "ENGI",
+    "titles": 545,
+    "domains": 117,
+    "urls": 1902
+  },
+  {
+    "studio": "Yokohama Animation Lab",
+    "titles": 636,
+    "domains": 118,
+    "urls": 1893
+  },
+  {
+    "studio": "Bee Train",
+    "titles": 346,
+    "domains": 54,
+    "urls": 1875
+  },
+  {
+    "studio": "AQUA ARIS",
+    "titles": 1057,
+    "domains": 66,
+    "urls": 1857
+  },
+  {
+    "studio": "Bridge",
+    "titles": 410,
+    "domains": 102,
+    "urls": 1822
+  },
+  {
+    "studio": "BUILD DREAM",
+    "titles": 655,
+    "domains": 39,
+    "urls": 1803
+  },
+  {
+    "studio": "Manglobe",
+    "titles": 502,
+    "domains": 80,
+    "urls": 1782
+  },
+  {
+    "studio": "Mushi Production",
+    "titles": 510,
+    "domains": 88,
+    "urls": 1730
+  },
+  {
+    "studio": "TROYCA",
+    "titles": 559,
+    "domains": 123,
+    "urls": 1723
+  },
+  {
+    "studio": "HAL Film Maker",
+    "titles": 467,
+    "domains": 49,
+    "urls": 1722
+  },
+  {
+    "studio": "Yumeta Company",
+    "titles": 706,
+    "domains": 110,
+    "urls": 1692
+  },
+  {
+    "studio": "Xing Yi Kai Chen",
+    "titles": 949,
+    "domains": 28,
+    "urls": 1669
+  },
+  {
+    "studio": "Nomad",
+    "titles": 526,
+    "domains": 97,
+    "urls": 1632
+  },
+  {
+    "studio": "Lay-duce",
+    "titles": 498,
+    "domains": 115,
+    "urls": 1622
+  },
+  {
+    "studio": "Felix Film",
+    "titles": 487,
+    "domains": 119,
+    "urls": 1608
+  },
+  {
+    "studio": "Signal.MD",
+    "titles": 552,
+    "domains": 118,
+    "urls": 1607
+  },
+  {
+    "studio": "Shanghai Animation Film Studio",
+    "titles": 1104,
+    "domains": 47,
+    "urls": 1593
+  },
+  {
+    "studio": "NAZ",
+    "titles": 496,
+    "domains": 119,
+    "urls": 1538
+  }
+]

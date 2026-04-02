@@ -1,0 +1,457 @@
+{
+  "generated_at": "2026-04-03T02:10:49.458845",
+  "catalog": {
+    "total_rows": 2005751,
+    "unique_titles": 722657,
+    "domains": 798,
+    "rows_read_all": 9713041
+  },
+  "matching": {
+    "matched": 317331,
+    "unmatched": 405326,
+    "match_rate": 43.91,
+    "verify_rejected": 1170,
+    "studios_with_damage": 1276,
+    "methods": {
+      "exact": 186580,
+      "prefix3_strict": 97894,
+      "trailing_number": 8740,
+      "article": 251,
+      "colon": 743,
+      "cjk_overlap2": 23123
+    }
+  },
+  "top_studios": [
+    {
+      "studio": "Toei Animation",
+      "titles": 12899,
+      "domains": 216,
+      "urls": 54443
+    },
+    {
+      "studio": "Sunrise",
+      "titles": 7800,
+      "domains": 189,
+      "urls": 33330
+    },
+    {
+      "studio": "J.C.Staff",
+      "titles": 8576,
+      "domains": 182,
+      "urls": 24816
+    },
+    {
+      "studio": "Studio Pierrot",
+      "titles": 6604,
+      "domains": 177,
+      "urls": 24801
+    },
+    {
+      "studio": "Madhouse",
+      "titles": 6439,
+      "domains": 208,
+      "urls": 22702
+    },
+    {
+      "studio": "Ruo Hong Culture",
+      "titles": 8824,
+      "domains": 53,
+      "urls": 20725
+    },
+    {
+      "studio": "TMS Entertainment",
+      "titles": 5124,
+      "domains": 172,
+      "urls": 20303
+    },
+    {
+      "studio": "Studio Deen",
+      "titles": 5464,
+      "domains": 165,
+      "urls": 19485
+    },
+    {
+      "studio": "Suoyi Technology",
+      "titles": 8313,
+      "domains": 43,
+      "urls": 18404
+    },
+    {
+      "studio": "OLM",
+      "titles": 4218,
+      "domains": 169,
+      "urls": 17205
+    },
+    {
+      "studio": "A-1 Pictures",
+      "titles": 5689,
+      "domains": 187,
+      "urls": 16078
+    },
+    {
+      "studio": "Production I.G",
+      "titles": 4818,
+      "domains": 177,
+      "urls": 14797
+    },
+    {
+      "studio": "Bones",
+      "titles": 4740,
+      "domains": 166,
+      "urls": 13054
+    },
+    {
+      "studio": "Studio 4°C",
+      "titles": 562,
+      "domains": 122,
+      "urls": 12283
+    },
+    {
+      "studio": "Nippon Animation",
+      "titles": 3052,
+      "domains": 143,
+      "urls": 10766
+    },
+    {
+      "studio": "SILVER LINK.",
+      "titles": 3311,
+      "domains": 144,
+      "urls": 10196
+    },
+    {
+      "studio": "Satelight",
+      "titles": 2475,
+      "domains": 133,
+      "urls": 8567
+    },
+    {
+      "studio": "Gonzo",
+      "titles": 1918,
+      "domains": 131,
+      "urls": 8481
+    },
+    {
+      "studio": "Xebec",
+      "titles": 1868,
+      "domains": 118,
+      "urls": 8132
+    },
+    {
+      "studio": "Wit Studio",
+      "titles": 3204,
+      "domains": 173,
+      "urls": 8085
+    },
+    {
+      "studio": "LIDENFILMS",
+      "titles": 2811,
+      "domains": 151,
+      "urls": 7918
+    },
+    {
+      "studio": "Brain's Base",
+      "titles": 2668,
+      "domains": 146,
+      "urls": 7498
+    },
+    {
+      "studio": "Tatsunoko Production",
+      "titles": 1441,
+      "domains": 111,
+      "urls": 7369
+    },
+    {
+      "studio": "MAPPA",
+      "titles": 2272,
+      "domains": 175,
+      "urls": 6909
+    },
+    {
+      "studio": "P.A. Works",
+      "titles": 3009,
+      "domains": 142,
+      "urls": 6606
+    },
+    {
+      "studio": "Shin-Ei Animation",
+      "titles": 2108,
+      "domains": 132,
+      "urls": 6338
+    },
+    {
+      "studio": "Doga Kobo",
+      "titles": 1934,
+      "domains": 125,
+      "urls": 6301
+    },
+    {
+      "studio": "Sparkly Key Animation Studio",
+      "titles": 2955,
+      "domains": 60,
+      "urls": 6272
+    },
+    {
+      "studio": "Gallop",
+      "titles": 1401,
+      "domains": 128,
+      "urls": 6199
+    },
+    {
+      "studio": "Kyoto Animation",
+      "titles": 2101,
+      "domains": 141,
+      "urls": 5697
+    },
+    {
+      "studio": "Shaft",
+      "titles": 1732,
+      "domains": 130,
+      "urls": 5495
+    },
+    {
+      "studio": "AIC",
+      "titles": 1729,
+      "domains": 103,
+      "urls": 5237
+    },
+    {
+      "studio": "CloverWorks",
+      "titles": 1990,
+      "domains": 155,
+      "urls": 5074
+    },
+    {
+      "studio": "8bit",
+      "titles": 1693,
+      "domains": 141,
+      "urls": 4734
+    },
+    {
+      "studio": "Foch Film",
+      "titles": 2182,
+      "domains": 68,
+      "urls": 4703
+    },
+    {
+      "studio": "Lerche",
+      "titles": 1495,
+      "domains": 146,
+      "urls": 4618
+    },
+    {
+      "studio": "SynergySP",
+      "titles": 1207,
+      "domains": 120,
+      "urls": 4377
+    },
+    {
+      "studio": "Diomedéa",
+      "titles": 1241,
+      "domains": 119,
+      "urls": 4230
+    },
+    {
+      "studio": "DLE",
+      "titles": 1009,
+      "domains": 89,
+      "urls": 4222
+    },
+    {
+      "studio": "David Production",
+      "titles": 1615,
+      "domains": 145,
+      "urls": 4211
+    },
+    {
+      "studio": "Bandai Namco Pictures",
+      "titles": 1348,
+      "domains": 122,
+      "urls": 4159
+    },
+    {
+      "studio": "Project No.9",
+      "titles": 1364,
+      "domains": 117,
+      "urls": 3987
+    },
+    {
+      "studio": "Kinema Citrus",
+      "titles": 1506,
+      "domains": 147,
+      "urls": 3982
+    },
+    {
+      "studio": "feel.",
+      "titles": 1258,
+      "domains": 128,
+      "urls": 3959
+    },
+    {
+      "studio": "Group TAC",
+      "titles": 768,
+      "domains": 95,
+      "urls": 3908
+    },
+    {
+      "studio": "White Fox",
+      "titles": 1417,
+      "domains": 142,
+      "urls": 3859
+    },
+    {
+      "studio": "Haoliners Animation",
+      "titles": 1311,
+      "domains": 101,
+      "urls": 3830
+    },
+    {
+      "studio": "Ashi Productions",
+      "titles": 750,
+      "domains": 105,
+      "urls": 3759
+    },
+    {
+      "studio": "Studio Gokumi",
+      "titles": 1212,
+      "domains": 124,
+      "urls": 3558
+    },
+    {
+      "studio": "Tezuka Productions",
+      "titles": 1005,
+      "domains": 120,
+      "urls": 3556
+    }
+  ],
+  "top_domains": [
+    {
+      "domain": "123animehub.cc",
+      "count": 207148
+    },
+    {
+      "domain": "hianimes.ro",
+      "count": 97471
+    },
+    {
+      "domain": "shinden.pl",
+      "count": 78449
+    },
+    {
+      "domain": "animevn.net",
+      "count": 73519
+    },
+    {
+      "domain": "dafflix.net",
+      "count": 69209
+    },
+    {
+      "domain": "scifi-universe.com",
+      "count": 53781
+    },
+    {
+      "domain": "theanimelist.net",
+      "count": 52238
+    },
+    {
+      "domain": "akichan.moe",
+      "count": 48867
+    },
+    {
+      "domain": "animesamaplus.com",
+      "count": 45256
+    },
+    {
+      "domain": "anime-no1.com",
+      "count": 44410
+    },
+    {
+      "domain": "otakupt.com",
+      "count": 34783
+    },
+    {
+      "domain": "anime-good.com",
+      "count": 34017
+    },
+    {
+      "domain": "anime-odcinki.pl",
+      "count": 33728
+    },
+    {
+      "domain": "9animetv.to",
+      "count": 32229
+    },
+    {
+      "domain": "wbijam.pl",
+      "count": 28920
+    },
+    {
+      "domain": "anime-indy.com",
+      "count": 28688
+    },
+    {
+      "domain": "anime-indy.net",
+      "count": 28688
+    },
+    {
+      "domain": "anime-indy.tv",
+      "count": 28688
+    },
+    {
+      "domain": "cartoony.net",
+      "count": 25518
+    },
+    {
+      "domain": "anisearch.de",
+      "count": 20702
+    },
+    {
+      "domain": "anisearch.com",
+      "count": 20696
+    },
+    {
+      "domain": "anisearch.es",
+      "count": 20696
+    },
+    {
+      "domain": "anisearch.fr",
+      "count": 20696
+    },
+    {
+      "domain": "anisearch.it",
+      "count": 20696
+    },
+    {
+      "domain": "nekoteka.com",
+      "count": 20648
+    },
+    {
+      "domain": "an1me.to",
+      "count": 20633
+    },
+    {
+      "domain": "free.xxiku.com",
+      "count": 19555
+    },
+    {
+      "domain": "animeschedule.net",
+      "count": 19369
+    },
+    {
+      "domain": "rezka.ag",
+      "count": 18245
+    },
+    {
+      "domain": "hdrezka.sh",
+      "count": 17916
+    }
+  ],
+  "db_sizes": {
+    "mal": 168749,
+    "kitsu": 137599,
+    "mal_multilang": 48926,
+    "synonym_expanded": 398468,
+    "anilist_anime_master": 5133,
+    "high_freq_resolved": 1865,
+    "dict_titles": 3820
+  }
+}

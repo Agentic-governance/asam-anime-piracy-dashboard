@@ -93,17 +93,16 @@ tr:hover td{background:rgba(255,107,53,.03)}
 
 <div class="hero">
   <h1>Anime Piracy Intelligence Dashboard</h1>
-  <p>Comprehensive analysis of 28,200 domains across the anime piracy ecosystem.
-     12,391 anime domains. 232K titles from 257 domains (sitemap 895K lines). 109,990 verified matches. Shikimori 23K RU titles. 20-agent pipeline.</p>
+  <p>Comprehensive analysis of 12,391 confirmed anime pirate domains. Sitemap scan: 9.7M catalog entries extracted from 798 domains. 317,331 verified anime title matches. Multi-language DB: MAL+Kitsu+Shikimori+AniList (750K+ entries).</p>
 </div>
 
 <div class="kpi-grid">
   <div class="kpi danger"><div class="kpi-value">12,391</div><div class="kpi-label">Anime Domains (Viewer)</div></div>
-  <div class="kpi"><div class="kpi-value">238</div><div class="kpi-label">Domains with Catalog</div></div>
-  <div class="kpi warning"><div class="kpi-value">232,408</div><div class="kpi-label">Unique Anime Titles</div></div>
-  <div class="kpi accent"><div class="kpi-value">47.3%</div><div class="kpi-label">Match Rate (Verified)</div></div>
-  <div class="kpi secondary"><div class="kpi-value">109,990</div><div class="kpi-label">Titles Matched</div></div>
-  <div class="kpi"><div class="kpi-value">903</div><div class="kpi-label">Studios Identified</div></div>
+  <div class="kpi"><div class="kpi-value">798</div><div class="kpi-label">Domains with Catalog</div></div>
+  <div class="kpi warning"><div class="kpi-value">722,657</div><div class="kpi-label">Unique Anime Titles</div></div>
+  <div class="kpi accent"><div class="kpi-value">43.9%</div><div class="kpi-label">Match Rate (Verified)</div></div>
+  <div class="kpi secondary"><div class="kpi-value">317,331</div><div class="kpi-label">Titles Matched</div></div>
+  <div class="kpi"><div class="kpi-value">1,276</div><div class="kpi-label">Studios Identified</div></div>
 </div>
 
 <!-- Domain Classification -->
@@ -117,14 +116,13 @@ tr:hover td{background:rgba(255,107,53,.03)}
     <div class="chart-card">
       <h3>Piracy Detection Pipeline</h3>
       <div style="padding:20px;color:var(--text-2);font-size:.85rem;line-height:2.2">
-        <div>📥 <strong>31,454</strong> raw domains from Brave crawl (340K URLs, 50 languages)</div>
-        <div>→ 🧹 <strong>28,200</strong> after cleanup (dead/legit removed)</div>
-        <div>→ 🤖 <strong>2,234</strong> confirmed pirate (v51 HGB classifier, prob>0.9)</div>
-        <div>→ 📚 <strong>666</strong> sites with catalog extracted (Playwright + API)</div>
-        <div>→ 📖 <strong>375,609</strong> catalog entries → <strong>197,235</strong> unique titles</div>
-        <div>→ 🏷️ Domain classified: anime 71K / manga 68K / movie 26K / hentai 19K</div>
-        <div>→ 🔗 Anime: <strong>40,069</strong> matched (<strong>56.3%</strong>) — CJK + synonym + 4-gram</div>
-        <div>→ 🏢 <strong>903</strong> studios, <strong>110K</strong> DB entries (MAL+Kitsu+AniList+synonyms)</div>
+        <div>📥 <strong>12,391</strong> confirmed anime domains (ASAM Viewer v51)</div>
+        <div>→ 🗺️ Sitemap scan: <strong>3,406</strong> domains checked (27.5%), <strong>9.7M</strong> rows extracted</div>
+        <div>→ 🧹 Quality filter: exclude manga/movie + 20 non-anime mega-sites</div>
+        <div>→ 📖 <strong>2M</strong> deduplicated rows → <strong>722,657</strong> unique titles (798 domains)</div>
+        <div>→ 🔗 High-precision match: <strong>317,331</strong> verified (<strong>43.9%</strong>)</div>
+        <div>→ 📚 DB: MAL 30K + Kitsu 22K + Shikimori 23K (RU) + AniList + synonyms = <strong>750K+ keys</strong></div>
+        <div>→ 🏢 <strong>1,276</strong> studios with piracy exposure identified</div>
       </div>
     </div>
   </div>
@@ -198,7 +196,7 @@ tr:hover td{background:rgba(255,107,53,.03)}
       <p><strong>Data Collection:</strong> Brave Search API (10,000+ queries across 50 languages, 150+ anime titles) producing 340K+ raw URLs from 31,454 domains.</p>
       <p><strong>Classification:</strong> ASAM Viewer v51 HistGradientBoosting classifier (56 features: DNS, TLS, domain name, network hop). Threshold 0.57, validated against Perplexity API ground truth (Accuracy 94.8%, Precision 95.7%, Recall 98.9%, F1 97.3%).</p>
       <p><strong>Catalog Extraction:</strong> Playwright headless browser with DOM extraction, network interception, pagination (up to 200 pages/site), ScraperAPI fallback for Cloudflare-protected sites. 666 sites crawled, 375K+ entries extracted.</p>
-      <p><strong>Rights Matching:</strong> Multi-DB approach — AniList GraphQL API (11,600+ anime) + MyAnimeList Jikan API (60K+ anime, fetching) + Kitsu API (15K+) + manual curation (148 titles). 10-round fuzzy matching pipeline with CJK support. Currently at 40.1% match rate, expanding to 60%+ with unified DB.</p>
+      <p><strong>Rights Matching:</strong> Multi-DB: MyAnimeList Jikan (30K anime) + Kitsu (22K) + Shikimori (23K, Russian↔English) + MAL multilang (24K, 20+ languages) + AniList (1.7K) + synonyms (399K expansion keys). High-precision matcher with verify_match (word overlap ≥1 OR substring ≥8 OR CJK overlap ≥2). Match rate: 43.9% (317,331/722,657), verify_rejected: 1,160. Sitemap scan ongoing — coverage will increase.</p>
       <p><strong>Studio Damage:</strong> Cross-referenced from original Brave crawl data (210K+ URLs across 2,234 pirate domains × 129 tracked works × 30+ languages). Each studio-work-domain combination independently verified.</p>
       <p><strong>OSINT Only:</strong> No accounts created. No content downloaded. All data from public sources.</p>
     </div>
@@ -208,7 +206,7 @@ tr:hover td{background:rgba(255,107,53,.03)}
 </div>
 
 <div class="footer">
-  <p>ASAM Anime Piracy Intelligence Dashboard — Updated 2026-04-01</p>
+  <p>ASAM Anime Piracy Intelligence Dashboard — Updated 2026-04-03 | Sitemap scan in progress (27.5% complete)</p>
   <p>Part of the <a href="https://agentic-governance.github.io/asam-game-piracy-dashboard/">ASAM Research Project</a></p>
 </div>
 
@@ -224,28 +222,28 @@ new C(document.getElementById('classChart'),{type:'doughnut',data:{
   datasets:[{data:[2234,10644,15322],backgroundColor:['#ff3344','#ffaa00','#00cc7a'],borderWidth:0}]
 },options:{plugins:{legend:{position:'bottom',labels:{padding:12,font:{size:11}}}}}});
 
-// Studio data
+// Studio data (from sitemap scan, 9.7M entries, 317K matched)
 const studioData = [
-  {name:'Pierrot',works:11,urls:21523,domains:4046,top:'Boruto (2,478)'},
-  {name:'Studio Ghibli',works:9,urls:20636,domains:4080,top:'The Boy and the Heron (2,796)'},
-  {name:'Madhouse',works:12,urls:20596,domains:4255,top:'Death Note (2,498)'},
-  {name:'Toei Animation',works:9,urls:18981,domains:4204,top:'One Piece (2,923)'},
-  {name:'A-1 Pictures',works:10,urls:18788,domains:3864,top:'Sword Art Online (2,536)'},
-  {name:'Bones',works:7,urls:14244,domains:2980,top:'Fullmetal Alchemist (2,506)'},
-  {name:'TMS Entertainment',works:7,urls:12675,domains:2875,top:'Dr. Stone (2,090)'},
-  {name:'David Production',works:5,urls:12566,domains:2983,top:"JoJo's Bizarre Adventure (2,866)"},
-  {name:'Production I.G',works:7,urls:11299,domains:2690,top:'Haikyuu!! (2,255)'},
-  {name:'CloverWorks',works:5,urls:10399,domains:2527,top:'Spy x Family (2,515)'},
-  {name:'MAPPA',works:5,urls:9544,domains:2334,top:'Jujutsu Kaisen (2,613)'},
-  {name:'Liden Films',works:4,urls:9274,domains:2419,top:'Tokyo Revengers (2,663)'},
-  {name:'Sunrise',works:4,urls:7376,domains:1921,top:'Gintama (2,215)'},
-  {name:'Lerche',works:3,urls:6746,domains:1785,top:'Assassination Classroom (2,476)'},
-  {name:'WIT/MAPPA',works:2,urls:5643,domains:1673,top:'Attack on Titan (3,189)'},
-  {name:'Kyoto Animation',works:3,urls:5293,domains:1509,top:'Violet Evergarden (2,151)'},
-  {name:'8bit',works:2,urls:5009,domains:1427,top:'That Time I Got Reincarnated (2,558)'},
-  {name:'CoMix Wave',works:3,urls:4922,domains:1319,top:'Your Name (2,075)'},
-  {name:'ufotable',works:2,urls:4690,domains:1408,top:'Demon Slayer (2,580)'},
-  {name:'Shin-Ei Animation',works:2,urls:4517,domains:1206,top:'Doraemon (2,327)'},
+  {name:'Toei Animation',works:12899,urls:54443,domains:216,top:'One Piece'},
+  {name:'Sunrise',works:7800,urls:33330,domains:189,top:'Mobile Suit Gundam'},
+  {name:'J.C.Staff',works:8576,urls:24816,domains:182,top:'Toradora'},
+  {name:'Studio Pierrot',works:6604,urls:24801,domains:177,top:'Naruto'},
+  {name:'Madhouse',works:6439,urls:22702,domains:208,top:'Death Note'},
+  {name:'Ruo Hong Culture',works:8824,urls:20725,domains:53,top:'Battle Through the Heavens'},
+  {name:'TMS Entertainment',works:5124,urls:20303,domains:172,top:'Dr. Stone'},
+  {name:'Studio Deen',works:5464,urls:19485,domains:165,top:'Rurouni Kenshin'},
+  {name:'Suoyi Technology',works:8313,urls:18404,domains:43,top:'Chinese Anime'},
+  {name:'OLM',works:4218,urls:17205,domains:169,top:'Pokemon'},
+  {name:'A-1 Pictures',works:5689,urls:16078,domains:187,top:'Sword Art Online'},
+  {name:'Production I.G',works:4818,urls:14797,domains:177,top:'Haikyuu!!'},
+  {name:'Bones',works:4740,urls:13054,domains:166,top:'Fullmetal Alchemist'},
+  {name:'Studio 4°C',works:562,urls:12283,domains:122,top:'Tekkonkinkreet'},
+  {name:'Nippon Animation',works:3052,urls:10766,domains:143,top:'World Masterpiece Theater'},
+  {name:'SILVER LINK.',works:3311,urls:10196,domains:144,top:'Watamote'},
+  {name:'Satelight',works:2475,urls:8567,domains:133,top:'Macross Frontier'},
+  {name:'Gonzo',works:1918,urls:8481,domains:131,top:'Samurai 7'},
+  {name:'Xebec',works:1868,urls:8132,domains:118,top:'To Love-Ru'},
+  {name:'Wit Studio',works:3204,urls:8085,domains:173,top:'Attack on Titan'},
 ];
 
 // Studio URLs chart
@@ -309,38 +307,38 @@ topWorks.forEach(([t,s,u,d,l],i)=>{
   </tr>`;
 });
 
-// Top anime pirate sites (anime-only, excluding manga/movie/adult)
+// Top anime pirate sites (from sitemap scan, 798 domains)
 const sites = [
-  ["animetosho.org",18947,"Anime/Torrent"],
+  ["123animehub.cc",207148,"Anime"],
+  ["hianimes.ro",97471,"Anime"],
+  ["shinden.pl",78449,"Anime (Polish)"],
+  ["animevn.net",73519,"Anime (Vietnamese)"],
+  ["dafflix.net",69209,"Anime"],
+  ["scifi-universe.com",53781,"Anime/SciFi DB"],
+  ["theanimelist.net",52238,"Anime DB"],
+  ["akichan.moe",48867,"Anime"],
+  ["animesamaplus.com",45256,"Anime (French)"],
+  ["anime-no1.com",44410,"Anime"],
+  ["otakupt.com",34783,"Anime (Portuguese)"],
+  ["anime-good.com",34017,"Anime"],
+  ["anime-odcinki.pl",33728,"Anime (Polish)"],
+  ["9animetv.to",32229,"Anime"],
+  ["wbijam.pl",28920,"Anime (Polish)"],
+  ["anime-indy.com",28688,"Anime"],
+  ["cartoony.net",25518,"Anime"],
+  ["anisearch.de",20702,"Anime DB (German)"],
+  ["nekoteka.com",20648,"Anime (Russian)"],
+  ["an1me.to",20633,"Anime"],
+  ["free.xxiku.com",19555,"Anime (Russian)"],
+  ["animeschedule.net",19369,"Anime Schedule"],
+  ["rezka.ag",18245,"Streaming (RU)"],
+  ["hdrezka.sh",17916,"Streaming (RU)"],
+  ["anikore.jp",15326,"Anime (Japanese)"],
   ["animesdata.com",14907,"Anime DB"],
-  ["shibaanime.com",5970,"Anime"],
-  ["masteranime.tv",5969,"Anime"],
-  ["lnwanime.com",5817,"Anime (Thai)"],
-  ["gogoanime.onl",4835,"Anime"],
-  ["gg-anime.com",3842,"Anime"],
-  ["animefantastica.com",3584,"Anime (Spanish)"],
-  ["ver-anime.com",3470,"Anime (Spanish)"],
-  ["intoxianime.com",2432,"Anime (Portuguese)"],
-  ["animegoo.life",2311,"Anime"],
-  ["1animego.life",2311,"Anime"],
-  ["animego.lol",2311,"Anime"],
-  ["indy-anime.net",2023,"Anime"],
-  ["myanimeguru.com",2009,"Anime"],
-  ["anime-4ever.ru",1995,"Anime (Russian)"],
-  ["asyaanimeleri.top",1604,"Anime (Turkish)"],
-  ["animewatchtv.su",1117,"Anime (Russian)"],
-  ["animefire.plus",1089,"Anime (Portuguese)"],
-  ["animetoast.cc",1042,"Anime (German)"],
-  ["hianime.to",987,"Anime"],
-  ["9animetv.to",934,"Anime"],
-  ["animeshouse.net",912,"Anime (Portuguese)"],
-  ["animedao.to",876,"Anime"],
-  ["animepahe.ru",845,"Anime"],
-  ["zoro.to",823,"Anime"],
-  ["animixplay.to",801,"Anime"],
-  ["kickassanime.am",778,"Anime"],
-  ["animesuge.to",756,"Anime"],
-  ["kaido.to",734,"Anime"],
+  ["anigo.to",13543,"Anime"],
+  ["lnwanime.com",12200,"Anime (Thai)"],
+  ["hianime.to",11800,"Anime"],
+  ["9anime.to",10900,"Anime"],
 ];
 const sBody = document.querySelector('#topSites tbody');
 sites.forEach(([d,c,t],i)=>{
